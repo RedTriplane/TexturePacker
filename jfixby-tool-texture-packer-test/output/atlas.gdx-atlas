@@ -1,0 +1,27 @@
+
+atlas.gdx-atlas.atlasdata.0.png
+size: 512,1024
+format: RGBA8888
+filter: MipMapLinearLinear,MipMapLinearLinear
+repeat: none
+com.jfixby.r3.iso.test.wdgs.grass-on-dirt.Blocked.var.01
+  rotate: false
+  xy: 2, 646
+  size: 419, 331
+  orig: 547, 459
+  offset: 64, 64
+  index: -1
+com.jfixby.r3.iso.test.wdgs.grass-on-dirt.LeftBottom.var.01
+  rotate: false
+  xy: 2, 311
+  size: 419, 331
+  orig: 547, 459
+  offset: 64, 64
+  index: -1
+com.jfixby.r3.iso.test.wdgs.grass-on-dirt.RightTop.var.01
+  rotate: false
+  xy: 2, 2
+  size: 419, 305
+  orig: 547, 459
+  offset: 64, 64
+  index: -1
