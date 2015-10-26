@@ -3,6 +3,8 @@ package com.jfixby.tools.gdx.texturepacker.api;
 import com.jfixby.cmns.api.components.ComponentInstaller;
 
 public class TexturePacker {
+	
+	
 
 	static private ComponentInstaller<TexturePackerComponent> componentInstaller = new ComponentInstaller<TexturePackerComponent>(
 			"TexturePacker");

@@ -233,6 +233,7 @@ public class RedTexturePacker implements Packer {
 			throws IOException {
 		ChildrenList png_files = from_folder.listChildren().filter(png_filter);
 		if (png_files.size() == 0) {
+			from_folder.listChildren().print("input files list");
 			throw new IOException("No input found in folder " + png_filter);
 		}
 
