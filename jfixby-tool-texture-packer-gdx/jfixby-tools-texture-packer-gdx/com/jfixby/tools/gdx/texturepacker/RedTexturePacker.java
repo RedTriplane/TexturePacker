@@ -6,6 +6,7 @@ import com.badlogic.gdx.tools.texturepacker.Pack;
 import com.badlogic.gdx.tools.texturepacker.Settings;
 import com.jfixby.cmns.api.assets.Names;
 import com.jfixby.cmns.api.collections.List;
+import com.jfixby.cmns.api.debug.Debug;
 import com.jfixby.cmns.api.filesystem.File;
 import com.jfixby.cmns.api.filesystem.FileSystem;
 import com.jfixby.cmns.api.log.L;
@@ -34,17 +35,17 @@ public class RedTexturePacker implements Packer {
 	private boolean debug_mode;
 
 	public RedTexturePacker(TexturePackingSpecs packer_specs) {
-		JUtils.checkNull("packer_specs", packer_specs);
+		Debug.checkNull("packer_specs", packer_specs);
 
 		png_input_dir = packer_specs.getInputRasterFolder();
-		JUtils.checkNull("getInputRasterFolder()", png_input_dir);
+		Debug.checkNull("getInputRasterFolder()", png_input_dir);
 
 		atlas_output_dir = packer_specs.getOutputAtlasFolder();
-		JUtils.checkNull("getOutputAtlasFolder()", atlas_output_dir);
+		Debug.checkNull("getOutputAtlasFolder()", atlas_output_dir);
 
 		output_atlas_filename = packer_specs.getAtlasFileName();
-		JUtils.checkNull("getAtlasFileName()", output_atlas_filename);
-		JUtils.checkEmpty("getAtlasFileName()", output_atlas_filename);
+		Debug.checkNull("getAtlasFileName()", output_atlas_filename);
+		Debug.checkEmpty("getAtlasFileName()", output_atlas_filename);
 		output_atlas_filename = output_atlas_filename + Settings.atlasExtension;
 
 		debug_mode = packer_specs.getDebugMode();

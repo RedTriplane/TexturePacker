@@ -3,6 +3,7 @@ package com.badlogic.gdx.tools;
 import java.util.ArrayList;
 
 import com.jfixby.cmns.api.collections.Map;
+import com.jfixby.cmns.api.debug.Debug;
 import com.jfixby.cmns.api.filesystem.File;
 import com.jfixby.cmns.api.util.JUtils;
 
@@ -30,8 +31,8 @@ public class DirToEntries {
 	}
 
 	public void put(File dir, ArrayList<Entry> entries) {
-		JUtils.checkNull("dir", dir);
-		JUtils.checkNull("entries", entries);
+		Debug.checkNull("dir", dir);
+		Debug.checkNull("entries", entries);
 		String key = dir.toJavaFile().getAbsolutePath();
 		EntryData data = new EntryData();
 		data.key = dir;

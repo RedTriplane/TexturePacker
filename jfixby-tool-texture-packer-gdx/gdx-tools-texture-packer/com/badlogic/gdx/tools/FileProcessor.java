@@ -23,6 +23,7 @@ import java.util.regex.Pattern;
 
 import com.badlogic.gdx.utils.Array;
 import com.jfixby.cmns.api.collections.Collection;
+import com.jfixby.cmns.api.debug.Debug;
 import com.jfixby.cmns.api.filesystem.File;
 import com.jfixby.cmns.api.util.JUtils;
 
@@ -106,10 +107,8 @@ public class FileProcessor {
 	 *            May be null.
 	 * @see #process(File, File)
 	 */
-	public ArrayList<Entry> process(String inputFile, String outputRoot)
-			throws Exception {
-		return process(FileWrapper.file(inputFile),
-				outputRoot == null ? null : FileWrapper.file(outputRoot));
+	public ArrayList<Entry> process(String inputFile, String outputRoot) throws Exception {
+		return process(FileWrapper.file(inputFile), outputRoot == null ? null : FileWrapper.file(outputRoot));
 	}
 
 	/**
@@ -119,11 +118,9 @@ public class FileProcessor {
 	 *            May be null if there is no output from processing the files.
 	 * @return the processed files added with {@link #addProcessedFile(Entry)}.
 	 */
-	public ArrayList<Entry> process(File inputFile, File outputRoot)
-			throws Exception {
+	public ArrayList<Entry> process(File inputFile, File outputRoot) throws Exception {
 		if (!inputFile.exists())
-			throw new IllegalArgumentException("Input file does not exist: "
-					+ inputFile.toJavaFile().getAbsolutePath());
+			throw new IllegalArgumentException("Input file does not exist: " + inputFile.toJavaFile().getAbsolutePath());
 		if (inputFile.isFile())
 			return process(JUtils.newList(inputFile), outputRoot);
 		else
@@ -137,13 +134,12 @@ public class FileProcessor {
 	 *            May be null if there is no output from processing the files.
 	 * @return the processed files added with {@link #addProcessedFile(Entry)}.
 	 */
-	public ArrayList<Entry> process(Collection<File> files, File outputRoot)
-			throws Exception {
+	public ArrayList<Entry> process(Collection<File> files, File outputRoot) throws Exception {
 
-//		files.print("processing files");
-//		L.d("outputRoot", outputRoot);
+		// files.print("processing files");
+		// L.d("outputRoot", outputRoot);
 
-		JUtils.checkNull("outputRoot", outputRoot);
+		Debug.checkNull("outputRoot", outputRoot);
 		outputFiles.clear();
 		DirToEntries dirToEntries = new DirToEntries();
 		process(files, outputRoot, outputRoot, dirToEntries, 0);
@@ -163,23 +159,21 @@ public class FileProcessor {
 				newOutputDir = dirEntries.get(0).outputDir;
 			String outputName = inputDir.getName();
 			if (outputSuffix != null)
-				outputName = outputName.replaceAll("(.*)\\..*", "$1")
-						+ outputSuffix;
+				outputName = outputName.replaceAll("(.*)\\..*", "$1") + outputSuffix;
 
 			Entry entry = new Entry();
 			entry.inputFile = inputDir;
 			entry.outputDir = newOutputDir;
 
 			if (newOutputDir != null) {
-//				File v1 = F.file(outputName);
+				// File v1 = F.file(outputName);
 				File v2 = FileWrapper.file(newOutputDir, outputName);
 				entry.outputFile = v2;
 			}
 			try {
 				processDir(entry, dirEntries);
 			} catch (Exception ex) {
-				throw new Exception("Error processing directory: "
-						+ entry.inputFile.toJavaFile().getAbsolutePath(), ex);
+				throw new Exception("Error processing directory: " + entry.inputFile.toJavaFile().getAbsolutePath(), ex);
 			}
 			allEntries.addAll(dirEntries);
 		}
@@ -190,16 +184,14 @@ public class FileProcessor {
 			try {
 				processFile(entry);
 			} catch (Exception ex) {
-				throw new Exception("Error processing file: "
-						+ entry.inputFile.toJavaFile().getAbsolutePath(), ex);
+				throw new Exception("Error processing file: " + entry.inputFile.toJavaFile().getAbsolutePath(), ex);
 			}
 		}
 
 		return outputFiles;
 	}
 
-	private void process(Collection<File> files, File outputRoot,
-			File outputDir, DirToEntries dirToEntries, int depth) {
+	private void process(Collection<File> files, File outputRoot, File outputDir, DirToEntries dirToEntries, int depth) {
 		// Store empty entries for every directory.
 		for (File file : files) {
 			File dir = file.parent();
@@ -230,8 +222,7 @@ public class FileProcessor {
 
 				String outputName = file.getName();
 				if (outputSuffix != null)
-					outputName = outputName.replaceAll("(.*)\\..*", "$1")
-							+ outputSuffix;
+					outputName = outputName.replaceAll("(.*)\\..*", "$1") + outputSuffix;
 
 				Entry entry = new Entry();
 				entry.depth = depth;
@@ -247,11 +238,8 @@ public class FileProcessor {
 				dirToEntries.get(dir).add(entry);
 			}
 			if (recursive && file.isFolder()) {
-				File subdir = outputDir.toJavaFile().getPath().length() == 0 ? FileWrapper
-						.file(file.getName()) : FileWrapper.file(outputDir,
-						file.getName());
-				process(file.listChildren().filter(inputFilter), outputRoot,
-						subdir, dirToEntries, depth + 1);
+				File subdir = outputDir.toJavaFile().getPath().length() == 0 ? FileWrapper.file(file.getName()) : FileWrapper.file(outputDir, file.getName());
+				process(file.listChildren().filter(inputFilter), outputRoot, subdir, dirToEntries, depth + 1);
 			}
 		}
 	}
@@ -264,8 +252,7 @@ public class FileProcessor {
 	 * Called for each input directory. The files will be
 	 * {@link #setComparator(Comparator) sorted}.
 	 */
-	protected void processDir(Entry entryDir, ArrayList<Entry> files)
-			throws Exception {
+	protected void processDir(Entry entryDir, ArrayList<Entry> files) throws Exception {
 	}
 
 	/**
