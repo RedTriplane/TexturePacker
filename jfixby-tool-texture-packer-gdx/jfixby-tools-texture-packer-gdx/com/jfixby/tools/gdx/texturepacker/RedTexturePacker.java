@@ -117,7 +117,7 @@ public class RedTexturePacker implements Packer {
 		// .child(output_atlas_filename).getAbsoluteFilePath());
 
 		byte[] bytes = atlas_file.readBytes();
-		String file_content = new String(bytes);
+		String file_content = new String(bytes,"UTF-8");
 		for (int i = 0; i < tmp_names_keeper.size(); i++) {
 			String tmp_name = tmp_names_keeper.getTemporaryName(i);
 			String original_name = tmp_names_keeper.getOriginalName(tmp_name);
