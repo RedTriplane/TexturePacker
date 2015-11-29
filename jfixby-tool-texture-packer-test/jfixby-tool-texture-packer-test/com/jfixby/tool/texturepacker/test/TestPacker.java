@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import com.jfixby.cmns.api.filesystem.File;
 import com.jfixby.cmns.api.filesystem.LocalFileSystem;
+import com.jfixby.cmns.desktop.DesktopAssembler;
 import com.jfixby.tools.gdx.texturepacker.api.AtlasPackingResult;
 import com.jfixby.tools.gdx.texturepacker.api.Packer;
 import com.jfixby.tools.gdx.texturepacker.api.TexturePacker;
@@ -12,7 +13,7 @@ import com.jfixby.tools.gdx.texturepacker.api.TexturePackingSpecs;
 public class TestPacker {
 
 	public static void main(String[] args) throws IOException {
-		Setup.setup();
+		DesktopAssembler.setup();
 
 		TexturePackingSpecs specs = TexturePacker.newPackingSpecs();
 		specs.setDebugMode(!true);
