@@ -2,7 +2,7 @@ package com.badlogic.gdx.tools;
 
 import java.util.ArrayList;
 
-import com.jfixby.cmns.api.collections.JUtils;
+import com.jfixby.cmns.api.collections.Collections;
 import com.jfixby.cmns.api.collections.Map;
 import com.jfixby.cmns.api.debug.Debug;
 import com.jfixby.cmns.api.file.File;
@@ -19,7 +19,7 @@ public class DirToEntries {
 		public ArrayList<Entry> value;
 	}
 
-	Map<String, EntryData> map = JUtils.newMap();
+	Map<String, EntryData> map = Collections.newMap();
 
 	public ArrayList<Entry> get(File dir) {
 		String key = dir.toJavaFile().getAbsolutePath();

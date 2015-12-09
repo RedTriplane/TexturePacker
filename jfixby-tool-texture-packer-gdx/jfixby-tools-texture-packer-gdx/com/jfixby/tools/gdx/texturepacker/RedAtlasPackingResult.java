@@ -2,7 +2,7 @@ package com.jfixby.tools.gdx.texturepacker;
 
 import com.jfixby.cmns.api.assets.AssetID;
 import com.jfixby.cmns.api.collections.Collection;
-import com.jfixby.cmns.api.collections.JUtils;
+import com.jfixby.cmns.api.collections.Collections;
 import com.jfixby.cmns.api.collections.List;
 import com.jfixby.cmns.api.file.File;
 import com.jfixby.cmns.api.log.L;
@@ -11,7 +11,7 @@ import com.jfixby.tools.gdx.texturepacker.api.AtlasPackingResult;
 public class RedAtlasPackingResult implements AtlasPackingResult {
 
 	private File atlas_file;
-	private List<AssetID> list = JUtils.newList();
+	private List<AssetID> list = Collections.newList();
 
 	@Override
 	public File getAtlasOutputFile() {

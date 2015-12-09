@@ -5,7 +5,7 @@ import java.io.IOException;
 import com.badlogic.gdx.tools.texturepacker.Pack;
 import com.badlogic.gdx.tools.texturepacker.Settings;
 import com.jfixby.cmns.api.assets.Names;
-import com.jfixby.cmns.api.collections.JUtils;
+import com.jfixby.cmns.api.collections.Collections;
 import com.jfixby.cmns.api.collections.List;
 import com.jfixby.cmns.api.debug.Debug;
 import com.jfixby.cmns.api.file.File;
@@ -129,7 +129,7 @@ public class RedTexturePacker implements Packer {
 		ChildrenList children = tmp_output_atlas_folder.listChildren();
 		ChildrenList atlases_list = children.filter(png_filter);
 
-		List<File> png_files_to_rename = JUtils.newList();
+		List<File> png_files_to_rename = Collections.newList();
 		for (int i = 0; i < atlases_list.size(); i++) {
 			File atlas_png_file = (atlases_list.getElementAt(i));
 			png_files_to_rename.add(atlas_png_file);

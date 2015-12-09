@@ -17,13 +17,12 @@
 package com.badlogic.gdx.tools;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.regex.Pattern;
 
 import com.badlogic.gdx.utils.Array;
 import com.jfixby.cmns.api.collections.Collection;
-import com.jfixby.cmns.api.collections.JUtils;
+import com.jfixby.cmns.api.collections.Collections;
 import com.jfixby.cmns.api.debug.Debug;
 import com.jfixby.cmns.api.file.File;
 
@@ -122,7 +121,7 @@ public class FileProcessor {
 		if (!inputFile.exists())
 			throw new IllegalArgumentException("Input file does not exist: " + inputFile.toJavaFile().getAbsolutePath());
 		if (inputFile.isFile())
-			return process(JUtils.newList(inputFile), outputRoot);
+			return process(Collections.newList(inputFile), outputRoot);
 		else
 			return process(inputFile.listChildren(), outputRoot);
 	}
@@ -150,7 +149,7 @@ public class FileProcessor {
 			File inputDir = dirToEntries.getKey(i);
 			ArrayList<Entry> dirEntries = dirToEntries.getValue(i);
 			if (comparator != null)
-				Collections.sort(dirEntries, entryComparator);
+				java.util.Collections.sort(dirEntries, entryComparator);
 
 			File newOutputDir = null;
 			if (flattenOutput)
@@ -179,7 +178,7 @@ public class FileProcessor {
 		}
 
 		if (comparator != null)
-			Collections.sort(allEntries, entryComparator);
+			java.util.Collections.sort(allEntries, entryComparator);
 		for (Entry entry : allEntries) {
 			try {
 				processFile(entry);
