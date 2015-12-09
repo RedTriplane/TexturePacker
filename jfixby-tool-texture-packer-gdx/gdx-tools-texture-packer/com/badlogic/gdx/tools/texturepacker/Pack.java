@@ -4,7 +4,7 @@ import java.awt.image.BufferedImage;
 import java.util.Comparator;
 
 import com.badlogic.gdx.tools.FileWrapper;
-import com.jfixby.cmns.api.filesystem.File;
+import com.jfixby.cmns.api.file.File;
 
 public class Pack {
 
@@ -40,7 +40,7 @@ public class Pack {
 	 * @param packFileName
 	 *            The name of the pack file. Also used to name the page images.
 	 */
-	static public void process(Settings settings, com.jfixby.cmns.api.filesystem.File png_input_dir, com.jfixby.cmns.api.filesystem.File atlas_output_dir,
+	static public void process(Settings settings, com.jfixby.cmns.api.file.File png_input_dir, com.jfixby.cmns.api.file.File atlas_output_dir,
 			String packFileName) {
 		try {
 			TexturePackerFileProcessor processor = new TexturePackerFileProcessor(

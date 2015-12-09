@@ -1,6 +1,6 @@
 package com.jfixby.tools.gdx.texturepacker;
 
-import com.jfixby.cmns.api.filesystem.File;
+import com.jfixby.cmns.api.file.File;
 import com.jfixby.tools.gdx.texturepacker.api.TexturePackingSpecs;
 
 public class RedTexturePackingSpecs implements TexturePackingSpecs {

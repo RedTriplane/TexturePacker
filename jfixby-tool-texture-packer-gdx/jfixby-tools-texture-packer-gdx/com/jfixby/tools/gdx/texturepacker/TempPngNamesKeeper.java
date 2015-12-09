@@ -1,8 +1,8 @@
 package com.jfixby.tools.gdx.texturepacker;
 
+import com.jfixby.cmns.api.collections.JUtils;
 import com.jfixby.cmns.api.collections.Map;
 import com.jfixby.cmns.api.log.L;
-import com.jfixby.cmns.api.util.JUtils;
 
 public class TempPngNamesKeeper {
 	long index = -1;

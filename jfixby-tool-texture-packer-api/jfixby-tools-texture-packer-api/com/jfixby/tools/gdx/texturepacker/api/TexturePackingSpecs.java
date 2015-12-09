@@ -1,6 +1,6 @@
 package com.jfixby.tools.gdx.texturepacker.api;
 
-import com.jfixby.cmns.api.filesystem.File;
+import com.jfixby.cmns.api.file.File;
 
 public interface TexturePackingSpecs {
 

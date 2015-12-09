@@ -2,8 +2,8 @@ package com.jfixby.tool.texturepacker.test;
 
 import java.io.IOException;
 
-import com.jfixby.cmns.api.filesystem.File;
-import com.jfixby.cmns.api.filesystem.LocalFileSystem;
+import com.jfixby.cmns.api.file.File;
+import com.jfixby.cmns.api.file.LocalFileSystem;
 import com.jfixby.cmns.desktop.DesktopAssembler;
 import com.jfixby.tools.gdx.texturepacker.api.AtlasPackingResult;
 import com.jfixby.tools.gdx.texturepacker.api.Packer;

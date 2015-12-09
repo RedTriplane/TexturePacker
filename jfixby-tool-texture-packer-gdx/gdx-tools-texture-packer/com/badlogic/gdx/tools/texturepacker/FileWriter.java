@@ -2,7 +2,7 @@ package com.badlogic.gdx.tools.texturepacker;
 
 import java.io.IOException;
 
-import com.jfixby.cmns.api.filesystem.File;
+import com.jfixby.cmns.api.file.File;
 
 public class FileWriter {
 

@@ -2,10 +2,10 @@ package com.badlogic.gdx.tools;
 
 import java.util.ArrayList;
 
+import com.jfixby.cmns.api.collections.JUtils;
 import com.jfixby.cmns.api.collections.Map;
 import com.jfixby.cmns.api.debug.Debug;
-import com.jfixby.cmns.api.filesystem.File;
-import com.jfixby.cmns.api.util.JUtils;
+import com.jfixby.cmns.api.file.File;
 
 public class DirToEntries {
 	class EntryData {

@@ -23,9 +23,9 @@ import java.util.regex.Pattern;
 
 import com.badlogic.gdx.utils.Array;
 import com.jfixby.cmns.api.collections.Collection;
+import com.jfixby.cmns.api.collections.JUtils;
 import com.jfixby.cmns.api.debug.Debug;
-import com.jfixby.cmns.api.filesystem.File;
-import com.jfixby.cmns.api.util.JUtils;
+import com.jfixby.cmns.api.file.File;
 
 /**
  * Collects files recursively, filtering by file name. Callbacks are provided to

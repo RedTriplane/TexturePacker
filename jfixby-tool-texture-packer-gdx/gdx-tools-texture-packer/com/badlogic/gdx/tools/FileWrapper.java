@@ -2,8 +2,8 @@ package com.badlogic.gdx.tools;
 
 import com.badlogic.gdx.files.FileHandle;
 import com.jfixby.cmns.adopted.gdx.fs.ToGdxFileAdaptor;
-import com.jfixby.cmns.api.filesystem.File;
-import com.jfixby.cmns.api.filesystem.LocalFileSystem;
+import com.jfixby.cmns.api.file.File;
+import com.jfixby.cmns.api.file.LocalFileSystem;
 import com.jfixby.cmns.api.log.L;
 
 public class FileWrapper {

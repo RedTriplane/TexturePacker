@@ -33,7 +33,7 @@ import java.util.regex.Pattern;
 import javax.imageio.ImageIO;
 
 import com.badlogic.gdx.utils.Array;
-import com.jfixby.cmns.api.filesystem.File;
+import com.jfixby.cmns.api.file.File;
 import com.jfixby.cmns.api.log.L;
 
 public class ImageProcessor {
