@@ -6,6 +6,6 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/jfixby-tool-texture-packer-api"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/jfixby-cmns-api"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/gdx-jfixby-cmns"/>
-	<classpathentry kind="lib" path="/libs/gdx/1.7.0/core/gdx-1.7.0.jar"/>
+	<classpathentry kind="lib" path="/libs/gdx/1.9.1/core/gdx-1.9.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
