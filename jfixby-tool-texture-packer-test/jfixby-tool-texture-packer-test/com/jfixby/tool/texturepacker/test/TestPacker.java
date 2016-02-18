@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import com.jfixby.cmns.api.file.File;
 import com.jfixby.cmns.api.file.LocalFileSystem;
-import com.jfixby.cmns.desktop.DesktopAssembler;
+import com.jfixby.red.desktop.DesktopAssembler;
 import com.jfixby.tools.gdx.texturepacker.api.AtlasPackingResult;
 import com.jfixby.tools.gdx.texturepacker.api.Packer;
 import com.jfixby.tools.gdx.texturepacker.api.TexturePacker;
