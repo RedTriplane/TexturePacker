@@ -2,6 +2,7 @@ package com.jfixby.tools.gdx.texturepacker;
 
 import java.io.IOException;
 
+import com.badlogic.gdx.graphics.Pixmap.Format;
 import com.badlogic.gdx.tools.texturepacker.Pack;
 import com.badlogic.gdx.tools.texturepacker.Settings;
 import com.jfixby.cmns.api.assets.Names;
@@ -64,12 +65,14 @@ public class RedTexturePacker implements Packer {
 		output_home_folder.makeFolder();
 
 		File temp_folder = create_temp_folder(output_home_folder);
-		File tmp_input_sprites_folder = output_file_system.newFile(temp_folder.child("#input_sprites_tmp_folder#").getAbsoluteFilePath());
+		File tmp_input_sprites_folder = output_file_system
+				.newFile(temp_folder.child("#input_sprites_tmp_folder#").getAbsoluteFilePath());
 		tmp_input_sprites_folder.makeFolder();
 
 		boolean ok = copy_all_png_files(png_input_folder, tmp_input_sprites_folder);
 
-		File tmp_output_atlas_folder = output_file_system.newFile(temp_folder.child("output_atlas").getAbsoluteFilePath());
+		File tmp_output_atlas_folder = output_file_system
+				.newFile(temp_folder.child("output_atlas").getAbsoluteFilePath());
 		tmp_output_atlas_folder.makeFolder();
 
 		TempPngNamesKeeper tmp_names_keeper = new TempPngNamesKeeper();
@@ -110,14 +113,15 @@ public class RedTexturePacker implements Packer {
 		return result;
 	}
 
-	private File fix_atlas_file(File tmp_output_atlas_folder, TempPngNamesKeeper tmp_names_keeper, RedAtlasPackingResult result) throws IOException {
+	private File fix_atlas_file(File tmp_output_atlas_folder, TempPngNamesKeeper tmp_names_keeper,
+			RedAtlasPackingResult result) throws IOException {
 		File atlas_file = tmp_output_atlas_folder.child(output_atlas_filename);
 
 		// output_file_system.newFile(tmp_output_atlas_folder
 		// .child(output_atlas_filename).getAbsoluteFilePath());
 
 		byte[] bytes = atlas_file.readBytes();
-		String file_content = new String(bytes,"UTF-8");
+		String file_content = new String(bytes, "UTF-8");
 		for (int i = 0; i < tmp_names_keeper.size(); i++) {
 			String tmp_name = tmp_names_keeper.getTemporaryName(i);
 			String original_name = tmp_names_keeper.getOriginalName(tmp_name);
@@ -157,10 +161,10 @@ public class RedTexturePacker implements Packer {
 			// L.d("renaming", atlas_png_file.getAbsoluteFilePath()
 			// .toAbsolutePathString());
 			atlas_png_file.rename(new_atlas_png_file_short_name);
-			// L.d("      to", new_atlas_png_file_short_name);
+			// L.d(" to", new_atlas_png_file_short_name);
 			file_content = file_content.replaceAll(old_atlas_png_file_short_name, new_atlas_png_file_short_name);
 			// L.d("replace", old_atlas_png_file_short_name);
-			// L.d("    to", new_atlas_png_file_short_name);
+			// L.d(" to", new_atlas_png_file_short_name);
 
 			id++;
 		}
@@ -179,7 +183,8 @@ public class RedTexturePacker implements Packer {
 
 	}
 
-	private static void pack_atlas(File png_input_dir, File atlas_output_dir, String output_atlas_filename, boolean debug) {
+	private static void pack_atlas(File png_input_dir, File atlas_output_dir, String output_atlas_filename,
+			boolean debug) {
 
 		L.d("png_input_dir        ", png_input_dir);
 		L.d("atlas_output_dir     ", atlas_output_dir);
@@ -188,13 +193,17 @@ public class RedTexturePacker implements Packer {
 		L.d("---packing-atlas--------------------------------------");
 		Settings settings = new Settings();
 		settings.debug = debug;
+		settings.maxWidth = 2048;
+		settings.maxHeight = 2048;
+		settings.format = Format.RGBA8888;
 		Pack.process(settings, png_input_dir, atlas_output_dir, output_atlas_filename);
 
 		L.d("---packing-atlas-done---------------------------------");
 
 	}
 
-	private void rename_all_sprite_to_temp_names(TempPngNamesKeeper tmp_names_keeper, File tmp_input_sprites_folder, RedAtlasPackingResult result) {
+	private void rename_all_sprite_to_temp_names(TempPngNamesKeeper tmp_names_keeper, File tmp_input_sprites_folder,
+			RedAtlasPackingResult result) {
 		ChildrenList sprites = tmp_input_sprites_folder.listChildren();
 		for (int i = 0; i < sprites.size(); i++) {
 			File sprite_file = sprites.getElementAt(i);
