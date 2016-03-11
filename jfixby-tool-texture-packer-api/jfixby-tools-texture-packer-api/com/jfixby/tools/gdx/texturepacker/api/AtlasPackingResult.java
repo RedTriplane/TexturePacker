@@ -6,10 +6,12 @@ import com.jfixby.cmns.api.file.File;
 
 public interface AtlasPackingResult {
 
-	File getAtlasOutputFile();
+    File getAtlasOutputFile();
 
-	Collection<AssetID> listPackedAssets();
+    Collection<AssetID> listPackedAssets();
 
-	void print();
+    void print();
+
+    Collection<File> listPages();
 
 }
