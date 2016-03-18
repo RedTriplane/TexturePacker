@@ -39,6 +39,7 @@ public class RedTexturePacker implements Packer {
 	}
     };
     private boolean debug_mode;
+    private int max_page_size;
 
     public RedTexturePacker(TexturePackingSpecs packer_specs) {
 	Debug.checkNull("packer_specs", packer_specs);
@@ -57,6 +58,8 @@ public class RedTexturePacker implements Packer {
 	debug_mode = packer_specs.getDebugMode();
 	output_file_system = atlas_output_dir.getFileSystem();
 	input_file_system = png_input_dir.getFileSystem();
+
+	this.max_page_size = packer_specs.getMaxPageSize();
 
     }
 
@@ -209,12 +212,13 @@ public class RedTexturePacker implements Packer {
 
     private void pack_atlas(File tmp_input_sprites_folder, File tmp_output_atlas_folder) {
 
-	pack_atlas((tmp_input_sprites_folder), (tmp_output_atlas_folder), this.output_atlas_filename, this.debug_mode);
+	pack_atlas((tmp_input_sprites_folder), (tmp_output_atlas_folder), this.output_atlas_filename, this.debug_mode,
+		this.max_page_size);
 
     }
 
     private static void pack_atlas(File png_input_dir, File atlas_output_dir, String output_atlas_filename,
-	    boolean debug) {
+	    boolean debug, int max_page_size) {
 
 	L.d("png_input_dir        ", png_input_dir);
 	L.d("atlas_output_dir     ", atlas_output_dir);
@@ -223,8 +227,9 @@ public class RedTexturePacker implements Packer {
 	L.d("---packing-atlas--------------------------------------");
 	Settings settings = new Settings();
 	settings.debug = debug;
-	settings.maxWidth = 2048;
-	settings.maxHeight = 2048;
+	settings.maxWidth = max_page_size;
+	settings.maxHeight = max_page_size;
+	// settings.jpegQuality = 0.1f;
 	settings.format = Format.RGBA8888;
 	Pack.process(settings, png_input_dir, atlas_output_dir, output_atlas_filename);
 

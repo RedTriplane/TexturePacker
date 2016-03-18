@@ -4,20 +4,24 @@ import com.jfixby.cmns.api.file.File;
 
 public interface TexturePackingSpecs {
 
-	void setInputRasterFolder(File input_raster_folder);
+    void setInputRasterFolder(File input_raster_folder);
 
-	void setOutputAtlasFolder(File output_atlas_folder);
+    void setOutputAtlasFolder(File output_atlas_folder);
 
-	void setOutputAtlasFileName(String file_name);
+    void setOutputAtlasFileName(String file_name);
 
-	File getInputRasterFolder();
+    File getInputRasterFolder();
 
-	File getOutputAtlasFolder();
+    File getOutputAtlasFolder();
 
-	String getAtlasFileName();
+    String getAtlasFileName();
 
-	void setDebugMode(boolean b);
+    void setDebugMode(boolean b);
 
-	boolean getDebugMode();
+    boolean getDebugMode();
+
+    void setMaxPageSize(int max_page_size);
+
+    int getMaxPageSize();
 
 }
