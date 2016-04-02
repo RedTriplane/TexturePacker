@@ -18,7 +18,9 @@ import com.jfixby.cmns.api.file.ChildrenList;
 import com.jfixby.cmns.api.file.File;
 import com.jfixby.cmns.api.file.FileFilter;
 import com.jfixby.cmns.api.file.FileSystem;
+import com.jfixby.cmns.api.java.ByteArray;
 import com.jfixby.cmns.api.log.L;
+import com.jfixby.cmns.api.util.JUtils;
 import com.jfixby.tools.gdx.texturepacker.api.AtlasPackingResult;
 import com.jfixby.tools.gdx.texturepacker.api.Packer;
 import com.jfixby.tools.gdx.texturepacker.api.TexturePackingSpecs;
@@ -153,8 +155,8 @@ public class RedTexturePacker implements Packer {
 	// output_file_system.newFile(tmp_output_atlas_folder
 	// .child(output_atlas_filename).getAbsoluteFilePath());
 
-	byte[] bytes = atlas_file.readBytes();
-	String file_content = new String(bytes, "UTF-8");
+	ByteArray bytes = atlas_file.readBytes();
+	String file_content = JUtils.newString(bytes);
 	for (int i = 0; i < tmp_names_keeper.size(); i++) {
 	    String tmp_name = tmp_names_keeper.getTemporaryName(i);
 	    String original_name = tmp_names_keeper.getOriginalName(tmp_name);
@@ -202,7 +204,7 @@ public class RedTexturePacker implements Packer {
 	    id++;
 	}
 
-	bytes = file_content.getBytes();
+	bytes = JUtils.newByteArray(file_content.getBytes());
 	atlas_file.writeBytes(bytes);
 
 	return atlas_file;
