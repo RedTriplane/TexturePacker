@@ -166,7 +166,7 @@ public class RedTexturePacker implements Packer {
 	}
 
 	ChildrenList children = tmp_output_atlas_folder.listChildren();
-	ChildrenList atlases_list = children.filter(png_filter);
+	ChildrenList atlases_list = children.filterFiles(png_filter);
 
 	List<File> png_files_to_rename = Collections.newList();
 	for (int i = 0; i < atlases_list.size(); i++) {
@@ -258,7 +258,7 @@ public class RedTexturePacker implements Packer {
     }
 
     private boolean copy_all_png_files(File from_folder, File to_folder) throws IOException {
-	ChildrenList png_files = from_folder.listChildren().filter(png_filter);
+	ChildrenList png_files = from_folder.listChildren().filterFiles(png_filter);
 	if (png_files.size() == 0) {
 	    from_folder.listChildren().print("input files list");
 	    throw new IOException("No input found in folder " + from_folder);

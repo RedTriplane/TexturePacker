@@ -238,7 +238,7 @@ public class FileProcessor {
 			}
 			if (recursive && file.isFolder()) {
 				File subdir = outputDir.toJavaFile().getPath().length() == 0 ? FileWrapper.file(file.getName()) : FileWrapper.file(outputDir, file.getName());
-				process(file.listChildren().filter(inputFilter), outputRoot, subdir, dirToEntries, depth + 1);
+				process(file.listChildren().filterFiles(inputFilter), outputRoot, subdir, dirToEntries, depth + 1);
 			}
 		}
 	}
