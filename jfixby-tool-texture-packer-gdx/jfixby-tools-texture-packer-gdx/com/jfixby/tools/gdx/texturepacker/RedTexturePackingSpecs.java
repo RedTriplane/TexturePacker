@@ -10,70 +10,82 @@ public class RedTexturePackingSpecs implements TexturePackingSpecs {
 	private File outputAtlasFolder;
 	private String atlasFileName = "";
 	private boolean debug_mode;
-	private int max_page_size;
+	private int max_page_size = 1024;
+	private int min_page_size = 1024;
 	private int padding;
 
+	@Override
 	public String getAtlasFileName () {
-		return atlasFileName;
+		return this.atlasFileName;
 	}
 
-	public void setAtlasFileName (String atlasFileName) {
+	public void setAtlasFileName (final String atlasFileName) {
 		this.atlasFileName = atlasFileName;
 	}
 
 	@Override
-	public void setOutputAtlasFileName (String file_name) {
+	public void setOutputAtlasFileName (final String file_name) {
 		this.atlasFileName = file_name;
 	}
 
 	@Override
-	public void setDebugMode (boolean debug_mode) {
+	public void setDebugMode (final boolean debug_mode) {
 		this.debug_mode = debug_mode;
 	}
 
 	@Override
 	public boolean getDebugMode () {
-		return debug_mode;
+		return this.debug_mode;
 	}
 
 	@Override
-	public void setInputRasterFolder (File input_raster_folder) {
+	public void setInputRasterFolder (final File input_raster_folder) {
 		this.inputRasterFolder = input_raster_folder;
 	}
 
 	@Override
-	public void setOutputAtlasFolder (File output_atlas_folder) {
+	public void setOutputAtlasFolder (final File output_atlas_folder) {
 		this.outputAtlasFolder = output_atlas_folder;
 	}
 
 	@Override
 	public File getInputRasterFolder () {
-		return inputRasterFolder;
+		return this.inputRasterFolder;
 	}
 
 	@Override
 	public File getOutputAtlasFolder () {
-		return outputAtlasFolder;
+		return this.outputAtlasFolder;
 	}
 
 	@Override
-	public void setMaxPageSize (int max_page_size) {
+	public void setMaxPageSize (final int max_page_size) {
 		this.max_page_size = max_page_size;
 	}
 
 	@Override
 	public int getMaxPageSize () {
-		return max_page_size;
+		return this.max_page_size;
 	}
 
 	@Override
-	public void setPadding (int padding) {
+	public void setPadding (final int padding) {
 		this.padding = padding;
 	}
 
 	@Override
 	public int getPadding () {
-		return padding;
+		return this.padding;
+	}
+
+	@Override
+	public void setMinPageSize (final int min_page_size) {
+		this.min_page_size = min_page_size;
+	}
+
+	@Override
+	public int getMinPageSize () {
+		return this.min_page_size;
 	}
 
 }

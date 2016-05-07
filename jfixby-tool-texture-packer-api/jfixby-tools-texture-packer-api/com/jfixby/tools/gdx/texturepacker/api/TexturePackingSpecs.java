@@ -29,4 +29,8 @@ public interface TexturePackingSpecs {
 
 	int getPadding ();
 
+	void setMinPageSize (int min_page_size);
+
+	int getMinPageSize ();
+
 }
