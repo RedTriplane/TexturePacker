@@ -138,7 +138,7 @@ public class RedTexturePacker implements Packer {
 		L.d("reading ", atlas_file);
 		if (!atlas_file.exists()) {
 
-			atlas_file.parent().listChildren().print();
+			atlas_file.parent().listChildren().print("atlas folder");
 			Err.reportError("File no found " + atlas_file);
 		}
 		final ToGdxFileAdaptor gdxAtlasFile = new ToGdxFileAdaptor(atlas_file);
