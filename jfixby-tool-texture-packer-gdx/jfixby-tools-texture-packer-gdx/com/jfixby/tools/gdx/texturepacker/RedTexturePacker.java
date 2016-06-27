@@ -142,7 +142,21 @@ public class RedTexturePacker implements Packer {
 			Err.reportError("File no found " + atlas_file);
 		}
 		final ToGdxFileAdaptor gdxAtlasFile = new ToGdxFileAdaptor(atlas_file);
-		final TextureAtlas.TextureAtlasData data = new TextureAtlas.TextureAtlasData(gdxAtlasFile, gdxAtlasFile.parent(), false);
+		TextureAtlas.TextureAtlasData data;
+		try {
+			data = new TextureAtlas.TextureAtlasData(gdxAtlasFile, gdxAtlasFile.parent(), false);
+		} catch (final Throwable e) {
+			e.printStackTrace();
+			String file = null;
+			try {
+				file = atlas_file.readToString();
+			} catch (final IOException e1) {
+				e1.printStackTrace();
+			}
+			L.e("bad file:");
+			L.e(file);
+			data = null;
+		}
 		final Array<Page> pages = data.getPages();
 		for (int i = 0; i < pages.size; i++) {
 			final Page page_i = pages.get(i);

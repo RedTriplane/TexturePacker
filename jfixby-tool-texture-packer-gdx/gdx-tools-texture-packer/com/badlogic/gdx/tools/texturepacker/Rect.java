@@ -1,15 +1,14 @@
+
 package com.badlogic.gdx.tools.texturepacker;
 
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.imageio.ImageIO;
-
-import com.badlogic.gdx.files.FileHandle;
-
+import com.jfixby.cmns.api.desktop.ImageAWT;
+import com.jfixby.cmns.api.err.Err;
+import com.jfixby.cmns.api.file.File;
 
 public class Rect implements Comparable<Rect> {
 	public String name;
@@ -28,98 +27,124 @@ public class Rect implements Comparable<Rect> {
 	private File file;
 	int score1, score2;
 
-	Rect (BufferedImage source, int left, int top, int newWidth, int newHeight, boolean isPatch) {
-		image = new BufferedImage(source.getColorModel(), source.getRaster().createWritableChild(left, top, newWidth, newHeight,
-			0, 0, null), source.getColorModel().isAlphaPremultiplied(), null);
-		offsetX = left;
-		offsetY = top;
-		regionWidth = newWidth;
-		regionHeight = newHeight;
-		originalWidth = source.getWidth();
-		originalHeight = source.getHeight();
-		width = newWidth;
-		height = newHeight;
+	Rect (final BufferedImage source, final int left, final int top, final int newWidth, final int newHeight,
+		final boolean isPatch) {
+		this.image = new BufferedImage(source.getColorModel(),
+			source.getRaster().createWritableChild(left, top, newWidth, newHeight, 0, 0, null),
+			source.getColorModel().isAlphaPremultiplied(), null);
+		this.offsetX = left;
+		this.offsetY = top;
+		this.regionWidth = newWidth;
+		this.regionHeight = newHeight;
+		this.originalWidth = source.getWidth();
+		this.originalHeight = source.getHeight();
+		this.width = newWidth;
+		this.height = newHeight;
 		this.isPatch = isPatch;
 	}
 
 	/** Clears the image for this rect, which will be loaded from the specified file by {@link #getImage(ImageProcessor)}. */
-	public void unloadImage (File file) {
+	public void unloadImage (final File file) {
 		this.file = file;
-		image = null;
+		this.image = null;
 	}
 
-	public BufferedImage getImage (ImageProcessor imageProcessor) {
-		if (image != null) return image;
+	public BufferedImage getImage (final ImageProcessor imageProcessor) {
+		if (this.image != null) {
+			return this.image;
+		}
 
 		BufferedImage image;
 		try {
-			image = ImageIO.read(file);
-		} catch (IOException ex) {
-			throw new RuntimeException("Error reading image: " + file, ex);
+			image = ImageAWT.readFromFile(this.file);
+		} catch (final IOException ex) {
+			throw new RuntimeException("Error reading image: " + this.file, ex);
 		}
-		if (image == null) throw new RuntimeException("Unable to read image: " + file);
-		String name = this.name;
-		if (isPatch) name += ".9";
+		if (image == null) {
+			throw new RuntimeException("Unable to read image: " + this.file);
+		}
+		final String name = this.name;
+		if (this.isPatch) {
+// name += ".9";
+			Err.reportError("Sorry, not supported yet!");
+		}
 		return imageProcessor.processImage(image, name).getImage(null);
 	}
 
 	public Rect () {
 	}
 
-	public Rect (Rect rect) {
-		x = rect.x;
-		y = rect.y;
-		width = rect.width;
-		height = rect.height;
+	public Rect (final Rect rect) {
+		this.x = rect.x;
+		this.y = rect.y;
+		this.width = rect.width;
+		this.height = rect.height;
 	}
 
-	public void set (Rect rect) {
-		name = rect.name;
-		image = rect.image;
-		offsetX = rect.offsetX;
-		offsetY = rect.offsetY;
-		regionWidth = rect.regionWidth;
-		regionHeight = rect.regionHeight;
-		originalWidth = rect.originalWidth;
-		originalHeight = rect.originalHeight;
-		x = rect.x;
-		y = rect.y;
-		width = rect.width;
-		height = rect.height;
-		index = rect.index;
-		rotated = rect.rotated;
-		aliases = rect.aliases;
-		splits = rect.splits;
-		pads = rect.pads;
-		canRotate = rect.canRotate;
-		score1 = rect.score1;
-		score2 = rect.score2;
-		file = rect.file;
-		isPatch = rect.isPatch;
-	}
-
-	public int compareTo (Rect o) {
-		return name.compareTo(o.name);
+	public void set (final Rect rect) {
+		this.name = rect.name;
+		this.image = rect.image;
+		this.offsetX = rect.offsetX;
+		this.offsetY = rect.offsetY;
+		this.regionWidth = rect.regionWidth;
+		this.regionHeight = rect.regionHeight;
+		this.originalWidth = rect.originalWidth;
+		this.originalHeight = rect.originalHeight;
+		this.x = rect.x;
+		this.y = rect.y;
+		this.width = rect.width;
+		this.height = rect.height;
+		this.index = rect.index;
+		this.rotated = rect.rotated;
+		this.aliases = rect.aliases;
+		this.splits = rect.splits;
+		this.pads = rect.pads;
+		this.canRotate = rect.canRotate;
+		this.score1 = rect.score1;
+		this.score2 = rect.score2;
+		this.file = rect.file;
+		this.isPatch = rect.isPatch;
 	}
 
 	@Override
-	public boolean equals (Object obj) {
-		if (this == obj) return true;
-		if (obj == null) return false;
-		if (getClass() != obj.getClass()) return false;
-		Rect other = (Rect)obj;
-		if (name == null) {
-			if (other.name != null) return false;
-		} else if (!name.equals(other.name)) return false;
+	public int compareTo (final Rect o) {
+		return this.name.toString().compareTo(o.name.toString());
+	}
+
+	@Override
+	public boolean equals (final Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (this.getClass() != obj.getClass()) {
+			return false;
+		}
+		final Rect other = (Rect)obj;
+		if (this.name == null) {
+			if (other.name != null) {
+				return false;
+			}
+		} else if (!this.name.equals(other.name)) {
+			return false;
+		}
 		return true;
 	}
 
 	@Override
 	public String toString () {
-		return name + "[" + x + "," + y + " " + width + "x" + height + "]";
+		return this.name + "[" + this.x + "," + this.y + " " + this.width + "x" + this.height + "]";
 	}
 
-	static public String getAtlasName (String name, boolean flattenPaths) {
-		return flattenPaths ? new FileHandle(name).name() : name;
+	static public String getAtlasName (final String name, final boolean flattenPaths) {
+		if (flattenPaths) {
+// return new FileHandle(name).name();
+			Err.reportError("no flattenPaths");
+			return null;
+		} else {
+			return name;
+		}
 	}
 }

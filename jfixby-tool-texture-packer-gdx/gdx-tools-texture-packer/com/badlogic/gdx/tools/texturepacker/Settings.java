@@ -1,3 +1,4 @@
+
 package com.badlogic.gdx.tools.texturepacker;
 
 import com.badlogic.gdx.graphics.Pixmap.Format;
@@ -16,10 +17,8 @@ public class Settings {
 	public boolean square = false;
 	public boolean stripWhitespaceX = true, stripWhitespaceY = true;
 	public int alphaThreshold = 10;
-	public TextureFilter filterMin = TextureFilter.MipMapLinearLinear,
-			filterMag = TextureFilter.MipMapLinearLinear;
-	public TextureWrap wrapX = TextureWrap.ClampToEdge,
-			wrapY = TextureWrap.ClampToEdge;
+	public TextureFilter filterMin = TextureFilter.MipMapLinearLinear, filterMag = TextureFilter.MipMapLinearLinear;
+	public TextureWrap wrapX = TextureWrap.ClampToEdge, wrapY = TextureWrap.ClampToEdge;
 	public Format format = Format.RGBA8888;
 	public boolean alias = true;
 	public String outputFormat = "png";
@@ -28,70 +27,68 @@ public class Settings {
 	public boolean fast;
 	public boolean debug = false;
 	public boolean silent = false;
-	public boolean flattenPaths = true;
+	public boolean flattenPaths = false;
 	public boolean premultiplyAlpha;
 	public boolean useIndexes = true;
 	public boolean bleed = true;
 	public boolean limitMemory = true;
 	public boolean grid;
-	public float[] scale = { 1 };
-	public String[] scaleSuffix = { "" };
+	public float[] scale = {1};
+	public String[] scaleSuffix = {""};
 	final public static String atlasExtension = ".gdx-atlas";
 
-	public Settings() {
+	public Settings () {
 	}
 
-	public Settings(Settings settings) {
-		fast = settings.fast;
+	public Settings (final Settings settings) {
+		this.fast = settings.fast;
 		// rotation = settings.rotation;
-		pot = settings.pot;
-		minWidth = settings.minWidth;
-		minHeight = settings.minHeight;
-		maxWidth = settings.maxWidth;
-		maxHeight = settings.maxHeight;
-		paddingX = settings.paddingX;
-		paddingY = settings.paddingY;
-		edgePadding = settings.edgePadding;
-		duplicatePadding = settings.duplicatePadding;
-		alphaThreshold = settings.alphaThreshold;
-		ignoreBlankImages = settings.ignoreBlankImages;
-		stripWhitespaceX = settings.stripWhitespaceX;
-		stripWhitespaceY = settings.stripWhitespaceY;
-		alias = settings.alias;
-		format = settings.format;
-		jpegQuality = settings.jpegQuality;
-		outputFormat = settings.outputFormat;
-		filterMin = settings.filterMin;
-		filterMag = settings.filterMag;
-		wrapX = settings.wrapX;
-		wrapY = settings.wrapY;
-		debug = settings.debug;
+		this.pot = settings.pot;
+		this.minWidth = settings.minWidth;
+		this.minHeight = settings.minHeight;
+		this.maxWidth = settings.maxWidth;
+		this.maxHeight = settings.maxHeight;
+		this.paddingX = settings.paddingX;
+		this.paddingY = settings.paddingY;
+		this.edgePadding = settings.edgePadding;
+		this.duplicatePadding = settings.duplicatePadding;
+		this.alphaThreshold = settings.alphaThreshold;
+		this.ignoreBlankImages = settings.ignoreBlankImages;
+		this.stripWhitespaceX = settings.stripWhitespaceX;
+		this.stripWhitespaceY = settings.stripWhitespaceY;
+		this.alias = settings.alias;
+		this.format = settings.format;
+		this.jpegQuality = settings.jpegQuality;
+		this.outputFormat = settings.outputFormat;
+		this.filterMin = settings.filterMin;
+		this.filterMag = settings.filterMag;
+		this.wrapX = settings.wrapX;
+		this.wrapY = settings.wrapY;
+		this.debug = settings.debug;
 		// silent = settings.silent;
 
-		flattenPaths = settings.flattenPaths;
-		premultiplyAlpha = settings.premultiplyAlpha;
-		square = settings.square;
-		useIndexes = settings.useIndexes;
-		bleed = settings.bleed;
-		limitMemory = settings.limitMemory;
-		grid = settings.grid;
-		scale = settings.scale;
-		scaleSuffix = settings.scaleSuffix;
+		this.flattenPaths = settings.flattenPaths;
+		this.premultiplyAlpha = settings.premultiplyAlpha;
+		this.square = settings.square;
+		this.useIndexes = settings.useIndexes;
+		this.bleed = settings.bleed;
+		this.limitMemory = settings.limitMemory;
+		this.grid = settings.grid;
+		this.scale = settings.scale;
+		this.scaleSuffix = settings.scaleSuffix;
 		// atlasExtension = settings.atlasExtension;
 	}
 
-	public String getScaledPackFileName(String packFileName, int scaleIndex) {
+	public String getScaledPackFileName (String packFileName, final int scaleIndex) {
 		// Use suffix if not empty string.
-		if (scaleSuffix[scaleIndex].length() > 0)
-			packFileName += scaleSuffix[scaleIndex];
-		else {
+		if (this.scaleSuffix[scaleIndex].length() > 0) {
+			packFileName += this.scaleSuffix[scaleIndex];
+		} else {
 			// Otherwise if scale != 1 or multiple scales, use subdirectory.
-			float scaleValue = scale[scaleIndex];
-			if (scale.length != 1) {
-				packFileName = (scaleValue == (int) scaleValue ? Integer
-						.toString((int) scaleValue) : Float
-						.toString(scaleValue))
-						+ "/" + packFileName;
+			final float scaleValue = this.scale[scaleIndex];
+			if (this.scale.length != 1) {
+				packFileName = (scaleValue == (int)scaleValue ? Integer.toString((int)scaleValue) : Float.toString(scaleValue)) + "/"
+					+ packFileName;
 			}
 		}
 		return packFileName;

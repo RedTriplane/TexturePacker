@@ -1,5 +1,5 @@
-package com.badlogic.gdx.tools.texturepacker;
 
+package com.badlogic.gdx.tools.texturepacker;
 
 /** @author Regnarock
  * @author Nathan Sweet */
@@ -10,29 +10,30 @@ public class Alias implements Comparable<Alias> {
 	public int[] pads;
 	public int offsetX, offsetY, originalWidth, originalHeight;
 
-	public Alias (Rect rect) {
-		name = rect.name;
-		index = rect.index;
-		splits = rect.splits;
-		pads = rect.pads;
-		offsetX = rect.offsetX;
-		offsetY = rect.offsetY;
-		originalWidth = rect.originalWidth;
-		originalHeight = rect.originalHeight;
+	public Alias (final Rect rect) {
+		this.name = rect.name;
+		this.index = rect.index;
+		this.splits = rect.splits;
+		this.pads = rect.pads;
+		this.offsetX = rect.offsetX;
+		this.offsetY = rect.offsetY;
+		this.originalWidth = rect.originalWidth;
+		this.originalHeight = rect.originalHeight;
 	}
 
-	public void apply (Rect rect) {
-		rect.name = name;
-		rect.index = index;
-		rect.splits = splits;
-		rect.pads = pads;
-		rect.offsetX = offsetX;
-		rect.offsetY = offsetY;
-		rect.originalWidth = originalWidth;
-		rect.originalHeight = originalHeight;
+	public void apply (final Rect rect) {
+		rect.name = this.name;
+		rect.index = this.index;
+		rect.splits = this.splits;
+		rect.pads = this.pads;
+		rect.offsetX = this.offsetX;
+		rect.offsetY = this.offsetY;
+		rect.originalWidth = this.originalWidth;
+		rect.originalHeight = this.originalHeight;
 	}
 
-	public int compareTo (Alias o) {
-		return name.compareTo(o.name);
+	@Override
+	public int compareTo (final Alias o) {
+		return this.name.toString().compareTo(o.name.toString());
 	}
 }

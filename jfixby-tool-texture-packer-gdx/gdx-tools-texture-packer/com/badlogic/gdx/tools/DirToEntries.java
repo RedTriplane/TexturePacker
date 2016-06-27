@@ -1,3 +1,4 @@
+
 package com.badlogic.gdx.tools;
 
 import java.util.ArrayList;
@@ -11,48 +12,49 @@ public class DirToEntries {
 	class EntryData {
 
 		@Override
-		public String toString() {
-			return value.toString();
+		public String toString () {
+			return this.value.toString();
 		}
 
 		public File key;
 		public ArrayList<Entry> value;
 	}
 
-	Map<String, EntryData> map = Collections.newMap();
+	final Map<File, EntryData> map = Collections.newMap();
 
-	public ArrayList<Entry> get(File dir) {
-		String key = dir.toJavaFile().getAbsolutePath();
-		EntryData val = map.get(key);
+	public ArrayList<Entry> get (final File dir) {
+		final File key = dir;
+		final EntryData val = this.map.get(key);
 		if (val == null) {
+			this.map.print("map");
 			return null;
 		}
 		return val.value;
 	}
 
-	public void put(File dir, ArrayList<Entry> entries) {
+	public void put (final File dir, final ArrayList<Entry> entries) {
 		Debug.checkNull("dir", dir);
 		Debug.checkNull("entries", entries);
-		String key = dir.toJavaFile().getAbsolutePath();
-		EntryData data = new EntryData();
+		final File key = dir;
+		final EntryData data = new EntryData();
 		data.key = dir;
 		data.value = entries;
-		map.put(key, data);
+		this.map.put(key, data);
 	}
 
-	public int size() {
-		return map.size();
+	public int size () {
+		return this.map.size();
 	}
 
-	public File getKey(int i) {
-		return map.getValueAt(i).key;
+	public File getKey (final int i) {
+		return this.map.getValueAt(i).key;
 	}
 
-	public ArrayList<Entry> getValue(int i) {
-		return map.getValueAt(i).value;
+	public ArrayList<Entry> getValue (final int i) {
+		return this.map.getValueAt(i).value;
 	}
 
-	public void print() {
+	public void print () {
 		this.map.print("dirToEntries");
 	}
 
