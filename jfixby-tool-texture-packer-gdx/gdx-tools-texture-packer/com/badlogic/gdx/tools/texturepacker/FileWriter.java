@@ -6,7 +6,6 @@ import java.io.OutputStream;
 
 import com.jfixby.cmns.api.file.File;
 import com.jfixby.cmns.api.file.FileOutputStream;
-import com.jfixby.cmns.api.log.L;
 
 public class FileWriter {
 
@@ -23,7 +22,7 @@ public class FileWriter {
 	}
 
 	public void write (final String string) throws IOException {
-		L.d(">>>>", string);
+// L.d(">>>>", string);
 		this.w.write(string);
 	}
 

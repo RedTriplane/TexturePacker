@@ -26,7 +26,7 @@ public class DirToEntries {
 		final File key = dir;
 		final EntryData val = this.map.get(key);
 		if (val == null) {
-			this.map.print("map");
+// this.map.print("map");
 			return null;
 		}
 		return val.value;
