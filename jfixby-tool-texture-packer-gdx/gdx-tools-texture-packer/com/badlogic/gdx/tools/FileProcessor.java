@@ -123,7 +123,7 @@ public class FileProcessor {
 		if (inputFile.isFile())
 			return process(Collections.newList(inputFile), outputRoot);
 		else
-			return process(inputFile.listChildren(), outputRoot);
+			return process(inputFile.listDirectChildren(), outputRoot);
 	}
 
 	/**
@@ -238,7 +238,7 @@ public class FileProcessor {
 			}
 			if (recursive && file.isFolder()) {
 				File subdir = outputDir.toJavaFile().getPath().length() == 0 ? FileWrapper.file(file.getName()) : FileWrapper.file(outputDir, file.getName());
-				process(file.listChildren().filterFiles(inputFilter), outputRoot, subdir, dirToEntries, depth + 1);
+				process(file.listDirectChildren().filterFiles(inputFilter), outputRoot, subdir, dirToEntries, depth + 1);
 			}
 		}
 	}
