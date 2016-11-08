@@ -134,7 +134,7 @@ public class RedTexturePacker implements Packer {
 		return result;
 	}
 
-	private void collectTextures (final File atlas_file, final RedAtlasPackingResult result) {
+	private void collectTextures (final File atlas_file, final RedAtlasPackingResult result) throws IOException {
 		L.d("reading ", atlas_file);
 		if (!atlas_file.exists()) {
 
@@ -261,7 +261,7 @@ public class RedTexturePacker implements Packer {
 	}
 
 	private void rename_all_sprite_to_temp_names (final TempPngNamesKeeper tmp_names_keeper, final File tmp_input_sprites_folder,
-		final RedAtlasPackingResult result) {
+		final RedAtlasPackingResult result) throws IOException {
 		final ChildrenList sprites = tmp_input_sprites_folder.listDirectChildren();
 		for (int i = 0; i < sprites.size(); i++) {
 			final File sprite_file = sprites.getElementAt(i);

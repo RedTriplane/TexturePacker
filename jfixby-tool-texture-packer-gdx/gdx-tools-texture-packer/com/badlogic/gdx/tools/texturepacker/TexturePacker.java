@@ -87,7 +87,7 @@ public class TexturePacker {
 		this.inputImages.add(inputImage);
 	}
 
-	public void pack (final File outputDir, String packFileName) {
+	public void pack (final File outputDir, String packFileName) throws IOException {
 		if (packFileName.endsWith(this.settings.atlasExtension)) {
 			packFileName = packFileName.substring(0, packFileName.length() - this.settings.atlasExtension.length());
 		}
@@ -116,7 +116,7 @@ public class TexturePacker {
 		}
 	}
 
-	private void writeImages (final File outputDir, final String scaledPackFileName, final Array<Page> pages) {
+	private void writeImages (final File outputDir, final String scaledPackFileName, final Array<Page> pages) throws IOException {
 		final File packFileNoExt = FileWrapper.file(outputDir, scaledPackFileName);
 		final File packDir = packFileNoExt.parent();
 		final String imageName = packFileNoExt.getName();
