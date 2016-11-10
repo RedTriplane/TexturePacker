@@ -289,7 +289,7 @@ public class RedTexturePacker implements Packer {
 		return true;
 	}
 
-	private File create_temp_folder (final File output_home_folder) {
+	private File create_temp_folder (final File output_home_folder) throws IOException {
 		final String tmp_folder_name = "tmp-" + System.currentTimeMillis();
 		final File tmp_folder = this.output_file_system.newFile(output_home_folder.child(tmp_folder_name).getAbsoluteFilePath());
 		tmp_folder.makeFolder();
