@@ -1,7 +1,7 @@
 
 package com.jfixby.tools.gdx.texturepacker;
 
-import com.jfixby.cmns.api.assets.AssetID;
+import com.jfixby.cmns.api.assets.ID;
 import com.jfixby.cmns.api.collections.Collection;
 import com.jfixby.cmns.api.collections.Collections;
 import com.jfixby.cmns.api.collections.List;
@@ -12,7 +12,7 @@ import com.jfixby.tools.gdx.texturepacker.api.AtlasPackingResult;
 public class RedAtlasPackingResult implements AtlasPackingResult {
 
 	private File atlas_file;
-	private final List<AssetID> list = Collections.newList();
+	private final List<ID> list = Collections.newList();
 	private final List<File> textures = Collections.newList();
 
 	@Override
@@ -21,7 +21,7 @@ public class RedAtlasPackingResult implements AtlasPackingResult {
 	}
 
 	@Override
-	public Collection<AssetID> listPackedAssets () {
+	public Collection<ID> listPackedAssets () {
 		return this.list;
 	}
 
@@ -29,7 +29,7 @@ public class RedAtlasPackingResult implements AtlasPackingResult {
 		this.atlas_file = atlas_file;
 	}
 
-	public void addPackedAssetID (final AssetID newAssetID) {
+	public void addPackedAssetID (final ID newAssetID) {
 		this.list.add(newAssetID);
 	}
 
