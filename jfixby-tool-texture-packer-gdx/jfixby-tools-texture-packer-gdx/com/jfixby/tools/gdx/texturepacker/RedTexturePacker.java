@@ -269,7 +269,7 @@ public class RedTexturePacker implements Packer {
 			final String short_file_name = sprite_file.getName();
 
 			final String old_name = short_file_name.substring(0, short_file_name.length() - ".png".length());
-			result.addPackedAssetID(Names.newAssetID(old_name));
+			result.addPackedAssetID(Names.newID(old_name));
 
 			final String new_name = tmp_names_keeper.newTempName();
 			sprite_file.rename(new_name + ".png");
