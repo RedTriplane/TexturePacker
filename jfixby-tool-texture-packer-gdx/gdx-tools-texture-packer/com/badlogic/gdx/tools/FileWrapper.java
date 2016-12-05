@@ -18,7 +18,7 @@ public class FileWrapper {
 		final File file = LocalFileSystem.newFile(path);
 
 		L.d("File >>> ", file);
-		Err.reportNotImplementedYet();
+		Err.throwNotImplementedYet();
 		return file;
 
 		// return;
