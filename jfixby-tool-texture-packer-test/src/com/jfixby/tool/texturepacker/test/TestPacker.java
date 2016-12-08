@@ -2,9 +2,9 @@ package com.jfixby.tool.texturepacker.test;
 
 import java.io.IOException;
 
+import com.jfixby.cmns.api.desktop.DesktopSetup;
 import com.jfixby.cmns.api.file.File;
 import com.jfixby.cmns.api.file.LocalFileSystem;
-import com.jfixby.red.desktop.DesktopSetup;
 import com.jfixby.tools.gdx.texturepacker.GdxTexturePacker;
 import com.jfixby.tools.gdx.texturepacker.api.AtlasPackingResult;
 import com.jfixby.tools.gdx.texturepacker.api.Packer;
