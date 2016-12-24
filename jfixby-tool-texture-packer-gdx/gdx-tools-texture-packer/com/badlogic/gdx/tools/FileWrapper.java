@@ -2,11 +2,11 @@
 package com.badlogic.gdx.tools;
 
 import com.badlogic.gdx.files.FileHandle;
-import com.jfixby.cmns.adopted.gdx.fs.ToGdxFileAdaptor;
-import com.jfixby.cmns.api.err.Err;
-import com.jfixby.cmns.api.file.File;
-import com.jfixby.cmns.api.file.LocalFileSystem;
-import com.jfixby.cmns.api.log.L;
+import com.jfixby.scarabei.adopted.gdx.fs.ToGdxFileAdaptor;
+import com.jfixby.scarabei.api.err.Err;
+import com.jfixby.scarabei.api.file.File;
+import com.jfixby.scarabei.api.file.LocalFileSystem;
+import com.jfixby.scarabei.api.log.L;
 
 public class FileWrapper {
 

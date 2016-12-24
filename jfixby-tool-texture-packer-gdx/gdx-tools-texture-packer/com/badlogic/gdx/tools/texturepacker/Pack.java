@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.Comparator;
 
 import com.badlogic.gdx.tools.FileWrapper;
-import com.jfixby.cmns.api.file.File;
+import com.jfixby.scarabei.api.file.File;
 
 public class Pack {
 
@@ -37,8 +37,8 @@ public class Pack {
 	/** @param png_input_dir Directory containing individual images to be packed.
 	 * @param atlas_output_dir Directory where the pack file and page images will be written.
 	 * @param packFileName The name of the pack file. Also used to name the page images. */
-	static public void process (final Settings settings, final com.jfixby.cmns.api.file.File png_input_dir,
-		final com.jfixby.cmns.api.file.File atlas_output_dir, final String packFileName) {
+	static public void process (final Settings settings, final com.jfixby.scarabei.api.file.File png_input_dir,
+		final com.jfixby.scarabei.api.file.File atlas_output_dir, final String packFileName) {
 		try {
 			final TexturePackerFileProcessor processor = new TexturePackerFileProcessor(settings, packFileName);
 			// Sort input files by name to avoid platform-dependent atlas output

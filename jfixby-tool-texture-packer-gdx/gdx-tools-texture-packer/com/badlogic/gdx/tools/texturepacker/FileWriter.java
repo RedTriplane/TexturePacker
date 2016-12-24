@@ -4,8 +4,8 @@ package com.badlogic.gdx.tools.texturepacker;
 import java.io.IOException;
 import java.io.OutputStream;
 
-import com.jfixby.cmns.api.file.File;
-import com.jfixby.cmns.api.file.FileOutputStream;
+import com.jfixby.scarabei.api.file.File;
+import com.jfixby.scarabei.api.file.FileOutputStream;
 
 public class FileWriter {
 

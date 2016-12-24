@@ -20,7 +20,7 @@ import java.util.Comparator;
 
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Sort;
-import com.jfixby.cmns.api.log.L;
+import com.jfixby.scarabei.api.log.L;
 
 /** Packs pages of images using the maximal rectangles bin packing algorithm by Jukka Jylänki. A brute force binary search is used
  * to pack into the smallest bin possible.

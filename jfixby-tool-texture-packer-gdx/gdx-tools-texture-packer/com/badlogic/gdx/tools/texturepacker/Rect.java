@@ -6,9 +6,9 @@ import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.jfixby.cmns.api.desktop.ImageAWT;
-import com.jfixby.cmns.api.err.Err;
-import com.jfixby.cmns.api.file.File;
+import com.jfixby.scarabei.api.desktop.ImageAWT;
+import com.jfixby.scarabei.api.err.Err;
+import com.jfixby.scarabei.api.file.File;
 
 public class Rect implements Comparable<Rect> {
 	public String name;

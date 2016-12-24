@@ -36,9 +36,9 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.tools.FileWrapper;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.GdxRuntimeException;
-import com.jfixby.cmns.api.desktop.ImageAWT;
-import com.jfixby.cmns.api.file.File;
-import com.jfixby.cmns.api.log.L;
+import com.jfixby.scarabei.api.desktop.ImageAWT;
+import com.jfixby.scarabei.api.file.File;
+import com.jfixby.scarabei.api.log.L;
 
 /** @author Nathan Sweet */
 public class TexturePacker {

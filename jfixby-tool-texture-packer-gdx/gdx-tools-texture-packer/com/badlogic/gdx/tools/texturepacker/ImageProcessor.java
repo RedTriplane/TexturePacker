@@ -31,12 +31,12 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import com.badlogic.gdx.utils.Array;
-import com.jfixby.cmns.api.desktop.ImageAWT;
-import com.jfixby.cmns.api.err.Err;
-import com.jfixby.cmns.api.file.File;
-import com.jfixby.cmns.api.file.FileSystem;
-import com.jfixby.cmns.api.log.L;
-import com.jfixby.cmns.api.util.path.AbsolutePath;
+import com.jfixby.scarabei.api.desktop.ImageAWT;
+import com.jfixby.scarabei.api.err.Err;
+import com.jfixby.scarabei.api.file.File;
+import com.jfixby.scarabei.api.file.FileSystem;
+import com.jfixby.scarabei.api.log.L;
+import com.jfixby.scarabei.api.util.path.AbsolutePath;
 
 public class ImageProcessor {
 	static private final BufferedImage emptyImage = new BufferedImage(1, 1, BufferedImage.TYPE_4BYTE_ABGR);

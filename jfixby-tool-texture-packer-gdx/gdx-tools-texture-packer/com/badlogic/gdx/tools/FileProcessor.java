@@ -22,10 +22,10 @@ import java.util.Comparator;
 import java.util.regex.Pattern;
 
 import com.badlogic.gdx.utils.Array;
-import com.jfixby.cmns.api.collections.Collection;
-import com.jfixby.cmns.api.collections.Collections;
-import com.jfixby.cmns.api.debug.Debug;
-import com.jfixby.cmns.api.file.File;
+import com.jfixby.scarabei.api.collections.Collection;
+import com.jfixby.scarabei.api.collections.Collections;
+import com.jfixby.scarabei.api.debug.Debug;
+import com.jfixby.scarabei.api.file.File;
 
 /** Collects files recursively, filtering by file name. Callbacks are provided to process files and the results are collected,
  * either {@link #processFile(Entry)} or {@link #processDir(Entry, ArrayList)} can be overridden, or both. The entries provided to

@@ -1,6 +1,6 @@
 package com.jfixby.tools.gdx.texturepacker.api;
 
-import com.jfixby.cmns.api.ComponentInstaller;
+import com.jfixby.scarabei.api.ComponentInstaller;
 
 public class TexturePacker {
 

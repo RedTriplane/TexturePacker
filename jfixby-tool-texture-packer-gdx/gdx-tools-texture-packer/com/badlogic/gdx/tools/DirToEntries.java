@@ -3,10 +3,10 @@ package com.badlogic.gdx.tools;
 
 import java.util.ArrayList;
 
-import com.jfixby.cmns.api.collections.Collections;
-import com.jfixby.cmns.api.collections.Map;
-import com.jfixby.cmns.api.debug.Debug;
-import com.jfixby.cmns.api.file.File;
+import com.jfixby.scarabei.api.collections.Collections;
+import com.jfixby.scarabei.api.collections.Map;
+import com.jfixby.scarabei.api.debug.Debug;
+import com.jfixby.scarabei.api.file.File;
 
 public class DirToEntries {
 	class EntryData {

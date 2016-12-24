@@ -4,7 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.Reader;
 
-import com.jfixby.cmns.api.file.File;
+import com.jfixby.scarabei.api.file.File;
 
 public class FileReader extends Reader {
 

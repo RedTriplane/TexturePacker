@@ -1,6 +1,6 @@
 package com.badlogic.gdx.tools;
 
-import com.jfixby.cmns.api.file.FileFilter;
+import com.jfixby.scarabei.api.file.FileFilter;
 
 public interface FilenameFilter extends FileFilter {
 

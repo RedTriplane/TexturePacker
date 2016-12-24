@@ -28,9 +28,9 @@ import com.badlogic.gdx.tools.FileWrapper;
 import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.badlogic.gdx.utils.Json;
 import com.badlogic.gdx.utils.JsonReader;
-import com.jfixby.cmns.api.collections.Collection;
-import com.jfixby.cmns.api.file.File;
-import com.jfixby.cmns.api.log.L;
+import com.jfixby.scarabei.api.collections.Collection;
+import com.jfixby.scarabei.api.file.File;
+import com.jfixby.scarabei.api.log.L;
 
 /** @author Nathan Sweet */
 public class TexturePackerFileProcessor extends FileProcessor {
