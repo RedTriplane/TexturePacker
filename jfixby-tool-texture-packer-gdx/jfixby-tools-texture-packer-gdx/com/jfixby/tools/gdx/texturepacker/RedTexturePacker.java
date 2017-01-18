@@ -15,7 +15,7 @@ import com.jfixby.scarabei.api.collections.Collections;
 import com.jfixby.scarabei.api.collections.List;
 import com.jfixby.scarabei.api.debug.Debug;
 import com.jfixby.scarabei.api.err.Err;
-import com.jfixby.scarabei.api.file.ChildrenList;
+import com.jfixby.scarabei.api.file.FilesList;
 import com.jfixby.scarabei.api.file.File;
 import com.jfixby.scarabei.api.file.FileFilter;
 import com.jfixby.scarabei.api.file.FileSystem;
@@ -183,8 +183,8 @@ public class RedTexturePacker implements Packer {
 			file_content = file_content.replaceAll(tmp_name, original_name);
 		}
 
-		final ChildrenList children = tmp_output_atlas_folder.listDirectChildren();
-		final ChildrenList atlases_list = children.filterFiles(this.png_filter);
+		final FilesList children = tmp_output_atlas_folder.listDirectChildren();
+		final FilesList atlases_list = children.filter(this.png_filter);
 
 		final List<File> png_files_to_rename = Collections.newList();
 		for (int i = 0; i < atlases_list.size(); i++) {
@@ -262,7 +262,7 @@ public class RedTexturePacker implements Packer {
 
 	private void rename_all_sprite_to_temp_names (final TempPngNamesKeeper tmp_names_keeper, final File tmp_input_sprites_folder,
 		final RedAtlasPackingResult result) throws IOException {
-		final ChildrenList sprites = tmp_input_sprites_folder.listDirectChildren();
+		final FilesList sprites = tmp_input_sprites_folder.listDirectChildren();
 		for (int i = 0; i < sprites.size(); i++) {
 			final File sprite_file = sprites.getElementAt(i);
 
@@ -279,7 +279,7 @@ public class RedTexturePacker implements Packer {
 	}
 
 	private boolean copy_all_png_files (final File from_folder, final File to_folder) throws IOException {
-		final ChildrenList png_files = from_folder.listDirectChildren().filterFiles(this.png_filter);
+		final FilesList png_files = from_folder.listDirectChildren().filter(this.png_filter);
 		if (png_files.size() == 0) {
 			from_folder.listDirectChildren().print("input files list");
 			throw new IOException("No input found in folder " + from_folder);

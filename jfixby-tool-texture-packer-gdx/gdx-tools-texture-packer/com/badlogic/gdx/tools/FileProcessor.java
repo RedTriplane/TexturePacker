@@ -234,7 +234,7 @@ public class FileProcessor {
 			if (this.recursive && file.isFolder()) {
 				final File subdir = outputDir.toJavaFile().getPath().length() == 0 ? FileWrapper.file(file.getName())
 					: FileWrapper.file(outputDir, file.getName());
-				this.process(file.listDirectChildren().filterFiles(this.inputFilter), outputRoot, subdir, dirToEntries, depth + 1);
+				this.process(file.listDirectChildren().filter(this.inputFilter), outputRoot, subdir, dirToEntries, depth + 1);
 			}
 		}
 	}
