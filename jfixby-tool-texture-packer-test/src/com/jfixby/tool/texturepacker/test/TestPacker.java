@@ -2,7 +2,7 @@ package com.jfixby.tool.texturepacker.test;
 
 import java.io.IOException;
 
-import com.jfixby.scarabei.api.desktop.DesktopSetup;
+import com.jfixby.scarabei.api.desktop.ScarabeiDesktop;
 import com.jfixby.scarabei.api.file.File;
 import com.jfixby.scarabei.api.file.LocalFileSystem;
 import com.jfixby.tools.gdx.texturepacker.GdxTexturePacker;
@@ -14,7 +14,7 @@ import com.jfixby.tools.gdx.texturepacker.api.TexturePackingSpecs;
 public class TestPacker {
 
     public static void main(String[] args) throws IOException {
-	DesktopSetup.deploy();
+	ScarabeiDesktop.deploy();
 	TexturePacker.installComponent(new GdxTexturePacker());
 	TexturePackingSpecs specs = TexturePacker.newPackingSpecs();
 	specs.setDebugMode(!true);
