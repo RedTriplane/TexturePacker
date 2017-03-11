@@ -6,8 +6,6 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/scarabei-red-desktop"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/jfixby-tool-texture-packer-api"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/jfixby-tool-texture-packer-gdx"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/gdx"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/gdx-backend-lwjgl"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
