@@ -1,5 +1,6 @@
 package com.badlogic.gdx.tools.texturepacker;
 
+import com.badlogic.gdx.tools.texturepacker.MaxRectsPacker;
 import com.badlogic.gdx.tools.texturepacker.MaxRectsPacker.FreeRectChoiceHeuristic;
 import com.badlogic.gdx.utils.Array;
 

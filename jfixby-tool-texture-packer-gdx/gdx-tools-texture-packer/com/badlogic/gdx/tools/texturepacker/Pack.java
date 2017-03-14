@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.Comparator;
 
 import com.badlogic.gdx.tools.FileWrapper;
+import com.badlogic.gdx.tools.texturepacker.TexturePackerFileProcessor;
 import com.jfixby.scarabei.api.file.File;
 
 public class Pack {
