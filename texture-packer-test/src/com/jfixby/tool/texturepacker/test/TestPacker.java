@@ -2,9 +2,9 @@ package com.jfixby.tool.texturepacker.test;
 
 import java.io.IOException;
 
-import com.jfixby.scarabei.api.desktop.ScarabeiDesktop;
 import com.jfixby.scarabei.api.file.File;
 import com.jfixby.scarabei.api.file.LocalFileSystem;
+import com.jfixby.scarabei.red.desktop.ScarabeiDesktop;
 import com.jfixby.tools.gdx.texturepacker.GdxTexturePacker;
 import com.jfixby.tools.gdx.texturepacker.api.AtlasPackingResult;
 import com.jfixby.tools.gdx.texturepacker.api.Packer;
