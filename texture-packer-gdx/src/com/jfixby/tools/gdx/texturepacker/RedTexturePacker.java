@@ -21,7 +21,8 @@ import com.jfixby.scarabei.api.file.FileSystem;
 import com.jfixby.scarabei.api.file.FilesList;
 import com.jfixby.scarabei.api.java.ByteArray;
 import com.jfixby.scarabei.api.log.L;
-import com.jfixby.scarabei.api.util.JUtils;
+import com.jfixby.scarabei.api.strings.Strings;
+import com.jfixby.scarabei.api.util.Utils;
 import com.jfixby.tools.gdx.texturepacker.api.AtlasPackingResult;
 import com.jfixby.tools.gdx.texturepacker.api.Packer;
 import com.jfixby.tools.gdx.texturepacker.api.TexturePackingSpecs;
@@ -174,7 +175,7 @@ public class RedTexturePacker implements Packer {
 		// .child(output_atlas_filename).getAbsoluteFilePath());
 
 		ByteArray bytes = atlas_file.readBytes();
-		String file_content = JUtils.newString(bytes);
+		String file_content = Strings.newString(bytes);
 		for (int i = 0; i < tmp_names_keeper.size(); i++) {
 			final String tmp_name = tmp_names_keeper.getTemporaryName(i);
 			final String original_name = tmp_names_keeper.getOriginalName(tmp_name);
@@ -222,7 +223,7 @@ public class RedTexturePacker implements Packer {
 			id++;
 		}
 
-		bytes = JUtils.newByteArray(file_content.getBytes());
+		bytes = Utils.newByteArray(file_content.getBytes());
 		atlas_file.writeBytes(bytes);
 
 		return atlas_file;
