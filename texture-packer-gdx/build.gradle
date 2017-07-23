@@ -1,0 +1,23 @@
+apply plugin: "java"
+apply plugin: "maven"
+
+sourceCompatibility = 1.8
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+
+dependencies {
+      compile project(":texture-packer-api")
+      compile "com.badlogicgames.gdx:gdx-tools:$gdxVersion"
+
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['gdx/','src/']
+        }
+        resources {
+            
+        }
+    }
+}

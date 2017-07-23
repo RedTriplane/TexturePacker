@@ -1,0 +1,3 @@
+include "texture-packer-api"
+include "texture-packer-gdx"
+include "texture-packer-test"
