@@ -25,7 +25,6 @@ import java.util.regex.Pattern;
 import com.badlogic.gdx.tools.Entry;
 import com.badlogic.gdx.tools.FileProcessor;
 import com.badlogic.gdx.tools.FileWrapper;
-import com.badlogic.gdx.tools.texturepacker.TexturePacker;
 import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.badlogic.gdx.utils.Json;
 import com.badlogic.gdx.utils.JsonReader;

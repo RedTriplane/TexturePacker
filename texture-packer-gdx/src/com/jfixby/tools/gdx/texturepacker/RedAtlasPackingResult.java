@@ -6,7 +6,6 @@ import com.jfixby.scarabei.api.collections.Collection;
 import com.jfixby.scarabei.api.collections.Collections;
 import com.jfixby.scarabei.api.collections.List;
 import com.jfixby.scarabei.api.file.File;
-import com.jfixby.scarabei.api.log.L;
 import com.jfixby.tools.gdx.texturepacker.api.AtlasPackingResult;
 
 public class RedAtlasPackingResult implements AtlasPackingResult {
@@ -35,12 +34,12 @@ public class RedAtlasPackingResult implements AtlasPackingResult {
 
 	public static final String Atlas = "libGDX.Atlas";
 
-	@Override
-	public void print () {
-		L.d("---" + Atlas + "[" + this.atlas_file.getName() + "]-------------------------------------");
-		this.textures.print("output pages");
-		this.list.print("packed assets");
-	}
+// @Override
+// public void print () {
+// L.d("---" + Atlas + "[" + this.atlas_file.getName() + "]-------------------------------------");
+// this.textures.print("output pages");
+// this.list.print("packed assets");
+// }
 
 	@Override
 	public Collection<File> listPages () {

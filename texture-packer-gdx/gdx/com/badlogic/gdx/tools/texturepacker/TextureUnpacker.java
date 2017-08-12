@@ -30,7 +30,6 @@ import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.TextureAtlasData;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.TextureAtlasData.Page;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.TextureAtlasData.Region;
-import com.badlogic.gdx.tools.texturepacker.TextureUnpacker;
 import com.jfixby.scarabei.api.log.L;
 
 /** Unpacks a texture atlas into individual image files.

@@ -2,8 +2,6 @@ package com.badlogic.gdx.tools.texturepacker;
 
 import java.util.NoSuchElementException;
 
-import com.badlogic.gdx.tools.texturepacker.ColorBleedEffect;
-
 class Mask {
 	int[] data, pending, changing;
 	int pendingSize, changingSize;

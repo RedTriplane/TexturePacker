@@ -30,8 +30,6 @@ import java.util.Random;
 
 import javax.imageio.ImageIO;
 
-import com.badlogic.gdx.tools.imagepacker.ImagePacker;
-
 /** <p>
  * A simple image packer class based on the nice algorithm by blackpawn.
  * </p>

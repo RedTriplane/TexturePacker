@@ -139,7 +139,7 @@ public class RedTexturePacker implements Packer {
 		L.d("reading ", atlas_file);
 		if (!atlas_file.exists()) {
 
-			atlas_file.parent().listDirectChildren().print("atlas folder");
+// atlas_file.parent().listDirectChildren().print("atlas folder");
 			Err.reportError("File no found " + atlas_file);
 		}
 		final ToGdxFileAdaptor gdxAtlasFile = new ToGdxFileAdaptor(atlas_file);
@@ -282,7 +282,7 @@ public class RedTexturePacker implements Packer {
 	private boolean copy_all_png_files (final File from_folder, final File to_folder) throws IOException {
 		final FilesList png_files = from_folder.listDirectChildren().filter(this.png_filter);
 		if (png_files.size() == 0) {
-			from_folder.listDirectChildren().print("input files list");
+// from_folder.listDirectChildren().print("input files list");
 			throw new IOException("No input found in folder " + from_folder);
 		}
 

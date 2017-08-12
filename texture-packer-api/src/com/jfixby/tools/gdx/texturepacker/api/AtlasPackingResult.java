@@ -10,7 +10,6 @@ public interface AtlasPackingResult {
 
     Collection<ID> listPackedAssets();
 
-    void print();
 
     Collection<File> listPages();
 

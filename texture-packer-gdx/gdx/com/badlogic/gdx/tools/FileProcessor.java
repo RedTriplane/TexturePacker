@@ -21,7 +21,6 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.regex.Pattern;
 
-import com.badlogic.gdx.tools.FileProcessor;
 import com.badlogic.gdx.utils.Array;
 import com.jfixby.scarabei.api.collections.Collection;
 import com.jfixby.scarabei.api.collections.Collections;

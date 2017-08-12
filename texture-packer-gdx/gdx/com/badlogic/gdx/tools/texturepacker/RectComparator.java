@@ -3,8 +3,6 @@ package com.badlogic.gdx.tools.texturepacker;
 
 import java.util.Comparator;
 
-import com.badlogic.gdx.tools.texturepacker.MaxRectsPacker;
-
 class RectComparator implements Comparator<Rect> {
 	/**
 	 *

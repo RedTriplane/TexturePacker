@@ -54,8 +54,6 @@ public class DirToEntries {
 		return this.map.getValueAt(i).value;
 	}
 
-	public void print () {
-		this.map.print("dirToEntries");
-	}
+	
 
 }

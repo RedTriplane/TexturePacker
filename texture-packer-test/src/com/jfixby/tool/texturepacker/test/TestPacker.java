@@ -1,3 +1,4 @@
+
 package com.jfixby.tool.texturepacker.test;
 
 import java.io.IOException;
@@ -13,25 +14,25 @@ import com.jfixby.tools.gdx.texturepacker.api.TexturePackingSpecs;
 
 public class TestPacker {
 
-    public static void main(String[] args) throws IOException {
-	ScarabeiDesktop.deploy();
-	TexturePacker.installComponent(new GdxTexturePacker());
-	TexturePackingSpecs specs = TexturePacker.newPackingSpecs();
-	specs.setDebugMode(!true);
-	File input_raster_folder = LocalFileSystem.ApplicationHome().child("input");
-	specs.setInputRasterFolder(input_raster_folder);
-	File output_atlas_folder = LocalFileSystem.ApplicationHome().child("output");
-	output_atlas_folder.makeFolder();
+	public static void main (final String[] args) throws IOException {
+		ScarabeiDesktop.deploy();
+		TexturePacker.installComponent(new GdxTexturePacker());
+		final TexturePackingSpecs specs = TexturePacker.newPackingSpecs();
+		specs.setDebugMode(!true);
+		final File input_raster_folder = LocalFileSystem.ApplicationHome().child("input");
+		specs.setInputRasterFolder(input_raster_folder);
+		final File output_atlas_folder = LocalFileSystem.ApplicationHome().child("output");
+		output_atlas_folder.makeFolder();
 
-	specs.setOutputAtlasFolder(output_atlas_folder);
-	specs.setOutputAtlasFileName("atlas");
+		specs.setOutputAtlasFolder(output_atlas_folder);
+		specs.setOutputAtlasFileName("atlas");
 
-	Packer packer = TexturePacker.newPacker(specs);
+		final Packer packer = TexturePacker.newPacker(specs);
 
-	AtlasPackingResult result = packer.pack();
+		final AtlasPackingResult result = packer.pack();
 
-	result.print();
+// result.print();
 
-    }
+	}
 
 }

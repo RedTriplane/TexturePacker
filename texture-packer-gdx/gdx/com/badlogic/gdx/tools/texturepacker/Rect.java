@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.badlogic.gdx.tools.texturepacker.ImageProcessor;
 import com.jfixby.scarabei.api.desktop.ImageAWT;
 import com.jfixby.scarabei.api.err.Err;
 import com.jfixby.scarabei.api.file.File;
