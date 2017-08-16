@@ -1,11 +1,11 @@
 
 package com.jfixby.tools.gdx.texturepacker;
 
-import com.jfixby.scarabei.api.assets.ID;
 import com.jfixby.scarabei.api.collections.Collection;
 import com.jfixby.scarabei.api.collections.Collections;
 import com.jfixby.scarabei.api.collections.List;
 import com.jfixby.scarabei.api.file.File;
+import com.jfixby.scarabei.api.names.ID;
 import com.jfixby.tools.gdx.texturepacker.api.AtlasPackingResult;
 
 public class RedAtlasPackingResult implements AtlasPackingResult {
